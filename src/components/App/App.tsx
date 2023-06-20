@@ -1,5 +1,4 @@
-import { Autocomplete, Button, List, ListItem, Sheet } from '@mui/joy'
-import { Add } from '@mui/icons-material'
+import { Autocomplete, List, ListItem, Sheet } from '@mui/joy'
 import './App.css'
 import products from "../../data/products"
 import { Product } from '../../types'
@@ -10,7 +9,7 @@ const getOptionLabel = (product: Product): string => `${product.name}`
 const App = () => {
   const [ingredients, setIngredients] = useState<Product["id"][]>([])
   
-  const handleChange = (e: SyntheticEvent, product: Product | null) => {
+  const handleChange = (_e: SyntheticEvent, product: Product | null) => {
     if (product) {
       setIngredients(ingredients.concat(product.id))
     }
