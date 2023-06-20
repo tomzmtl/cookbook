@@ -1,45 +1,64 @@
-import { Autocomplete, List, ListItem, Sheet } from '@mui/joy'
-import './App.css'
+import { Autocomplete, Button, Input, List, ListItem, Sheet, Stack } from '@mui/joy'
 import products from "../../data/products"
 import { Product } from '../../types'
-import { SyntheticEvent, useState } from 'react'
+import { ChangeEvent, SyntheticEvent, useState } from 'react'
+import { Add } from '@mui/icons-material'
+
+type Ingredient = {
+  product: Product,
+  weight: number
+}
 
 const getOptionLabel = (product: Product): string => `${product.name}`
 
 const App = () => {
-  const [ingredients, setIngredients] = useState<Product["id"][]>([])
+  const [ingredients, setIngredients] = useState<Ingredient[]>([])
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
+  const [selectedWeight, setSelectedWeight] = useState<string>("")
   
-  const handleChange = (_e: SyntheticEvent, product: Product | null) => {
+  const handleChangeProduct = (_e: SyntheticEvent, product: Product | null) => {
     if (product) {
-      setIngredients(ingredients.concat(product.id))
+      setSelectedProduct(product)
     }
   }
 
-  const renderSelectedIngredients = () => ingredients.map(id => {
-    const product = products.find(product => product.id === id)
+  const handleChangeWeight = (e: ChangeEvent<HTMLInputElement>) => {
+    setSelectedWeight(e.target.value)
+  }
 
-    if (!product) {
-      return "Unknown"
+  const handleAddIngredient = () => {
+    if (selectedProduct && selectedWeight) {
+      setIngredients(ingredients.concat([{
+        product: selectedProduct,
+        weight: Number(selectedWeight)
+      }]))
+      setSelectedWeight("")
     }
+  }
 
+  const renderSelectedIngredients = () => ingredients.map(ingredient => {
     return (
-      <ListItem key={product.id}>
-        {product.name}
+      <ListItem key={ingredient.product.id}>
+        {`${ingredient.product.name}: ${ingredient.weight}g`}
       </ListItem>
     )
   })
 
   return (
-    <Sheet className="App">
+    <Sheet className="App" sx={{ p: 2 }}>
       <List>
         {renderSelectedIngredients()}
-        <Autocomplete
-          options={products.filter(product => !ingredients.includes(product.id))}
-          getOptionLabel={getOptionLabel}
-          onChange={handleChange}
-          placeholder="Add ingredient..."
-          key={ingredients.length}
-        />
+        <Stack direction="row" key={ingredients.length} spacing={1}>
+          <Autocomplete
+            sx={{ width: 500 }}
+            options={products.filter(product => !ingredients.find(ingredient => ingredient.product.id === product.id))}
+            getOptionLabel={getOptionLabel}
+            onChange={handleChangeProduct}
+            placeholder="Add ingredient..."
+          />
+          <Input value={selectedWeight} onChange={handleChangeWeight} />
+          <Button startDecorator={<Add />} onClick={handleAddIngredient}>Add</Button>
+        </Stack>
       </List>
       
     </Sheet>
