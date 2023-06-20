@@ -1,4 +1,4 @@
-import { Autocomplete, Button, Input, List, ListItem, Sheet, Stack } from '@mui/joy'
+import { Autocomplete, Button, FormControl, FormLabel, Input, List, ListItem, Sheet, Stack } from '@mui/joy'
 import products from "../../data/products"
 import { Product } from '../../types'
 import { ChangeEvent, SyntheticEvent, useState } from 'react'
@@ -10,6 +10,17 @@ type Ingredient = {
 }
 
 const getOptionLabel = (product: Product): string => `${product.name}`
+
+const calculateTotals = (ingredients: Ingredient[]) => {
+  const totals = { calories: 0, protein: 0 }
+
+  for (const ingredient of ingredients) {
+    totals.calories += (ingredient.product.macros.calories / 100) * ingredient.weight
+    totals.protein += (ingredient.product.macros.protein / 100) * ingredient.weight
+  }
+
+  return totals
+}
 
 const App = () => {
   const [ingredients, setIngredients] = useState<Ingredient[]>([])
@@ -44,23 +55,33 @@ const App = () => {
     )
   })
 
+  const totals = calculateTotals(ingredients)
+
   return (
     <Sheet className="App" sx={{ p: 2 }}>
       <List>
         {renderSelectedIngredients()}
-        <Stack direction="row" key={ingredients.length} spacing={1}>
+        <ListItem>
+          {`Total: Calories: ${totals.calories.toFixed(0)}, Protéines: ${totals.protein.toFixed(1)}`}
+        </ListItem>
+      </List>
+      <Stack direction="row" key={ingredients.length} spacing={1} marginTop={5}>
+        <FormControl>
+          <FormLabel>Produit</FormLabel>
           <Autocomplete
             sx={{ width: 500 }}
             options={products.filter(product => !ingredients.find(ingredient => ingredient.product.id === product.id))}
             getOptionLabel={getOptionLabel}
             onChange={handleChangeProduct}
-            placeholder="Add ingredient..."
+            placeholder="Ajouter ingredient..."
           />
-          <Input value={selectedWeight} onChange={handleChangeWeight} />
-          <Button startDecorator={<Add />} onClick={handleAddIngredient}>Add</Button>
-        </Stack>
-      </List>
-      
+        </FormControl>
+        <FormControl>
+          <FormLabel>Poids</FormLabel>
+          <Input value={selectedWeight} onChange={handleChangeWeight} placeholder="Poids (g)" />
+        </FormControl>
+        <Button startDecorator={<Add />} onClick={handleAddIngredient} sx={{ height: 40, alignSelf: "flex-end" }}>Ajouter</Button>
+      </Stack>
     </Sheet>
   )
 }
