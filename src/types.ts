@@ -7,10 +7,12 @@ export type Product = {
   color?: string
   // Macros unit: g/100g
   macros: {
+    calories: number,
     fat: number
     carbs: {
       fiber: number
       sugars: number
+      total: number
     }
     protein: number
   }
