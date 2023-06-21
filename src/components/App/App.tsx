@@ -1,3 +1,4 @@
+import { compact } from "lodash-es"
 import { Autocomplete, Button, FormControl, FormLabel, Input, List, ListItem, Sheet, Stack } from '@mui/joy'
 import products from "../../data/products"
 import { Product } from '../../types'
@@ -9,7 +10,23 @@ type Ingredient = {
   weight: number
 }
 
-const getOptionLabel = (product: Product): string => `${product.name}`
+const getMacros = (ingredient: Ingredient) => ({
+  calories: ((ingredient.product.macros.calories / 100) * ingredient.weight),
+  protein: ((ingredient.product.macros.protein / 100) * ingredient.weight),
+})
+
+const displayCalories = (calories: number) => calories.toFixed(0)
+
+const displayProtein = (protein: number) => protein.toFixed(1)
+
+const getOptionLabel = (product: Product): string => compact([
+  product.name,
+  product.brand,
+  product.color,
+  product.flavour,
+  product.format,
+  product.extra
+]).join(", ")
 
 const calculateTotals = (ingredients: Ingredient[]) => {
   const totals = { calories: 0, protein: 0 }
@@ -48,9 +65,11 @@ const App = () => {
   }
 
   const renderSelectedIngredients = () => ingredients.map(ingredient => {
+    const macros = getMacros(ingredient)
+
     return (
       <ListItem key={ingredient.product.id}>
-        {`${ingredient.product.name}: ${ingredient.weight}g`}
+        {`${ingredient.product.name}: ${ingredient.weight}g (Cals: ${displayCalories(macros.calories)}, Prot.: ${displayProtein(macros.protein)}g)`}
       </ListItem>
     )
   })
@@ -62,14 +81,14 @@ const App = () => {
       <List>
         {renderSelectedIngredients()}
         <ListItem>
-          {`Total: Calories: ${totals.calories.toFixed(0)}, Protéines: ${totals.protein.toFixed(1)}`}
+          {`Total: Calories: ${displayCalories(totals.calories)}, Protéines: ${displayProtein(totals.protein)}g`}
         </ListItem>
       </List>
       <Stack direction="row" key={ingredients.length} spacing={1} marginTop={5}>
         <FormControl>
           <FormLabel>Produit</FormLabel>
           <Autocomplete
-            sx={{ width: 500 }}
+            sx={{ width: "100%" }}
             options={products.filter(product => !ingredients.find(ingredient => ingredient.product.id === product.id))}
             getOptionLabel={getOptionLabel}
             onChange={handleChangeProduct}

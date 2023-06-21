@@ -5,6 +5,9 @@ export type Product = {
   flavour?: string
   size?: string
   color?: string
+  format?: string
+  extra?: string
+  type?: string
   // Macros unit: g/100g
   macros: {
     calories: number,
