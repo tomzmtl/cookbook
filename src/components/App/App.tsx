@@ -21,6 +21,7 @@ const displayProtein = (protein: number) => protein.toFixed(1)
 
 const getOptionLabel = (product: Product): string => compact([
   product.name,
+  product.variety,
   product.brand,
   product.color,
   product.flavour,

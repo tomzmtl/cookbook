@@ -1,3 +1,4 @@
+import { size } from "lodash-es";
 import { Product } from "../types";
 
 /**
@@ -243,6 +244,207 @@ const products: Product[] = [
         sugars: 4.6,
       },
       protein: 3.4
+    }
+  },
+  {
+    id: "17",
+    name: "Tomates cerise",
+    macros: {
+      calories: 18,
+      fat: 0.2,
+      carbs: {
+        total: 3.9,
+        fiber: 1.2,
+        sugars: 2.6,
+      },
+      protein: 0.9
+    }
+  },
+  {
+    id: "18",
+    name: "Laitue",
+    variety: "Coeurs de Romaine",
+    brand: "Gifar",
+    macros: {
+      calories: 16,
+      fat: 0.3,
+      carbs: {
+        total: 3,
+        fiber: 1.5,
+        sugars: 1.5,
+      },
+      protein: 1.5
+    }
+  },
+  {
+    id: "19",
+    name: "Dinde fumée",
+    flavour: "Hickory",
+    brand: "Maple Leaf, Natural Selections",
+    format: "Émincée",
+    macros: {
+      calories: 87,
+      fat: 0.8,
+      carbs: {
+        total: 3,
+        fiber: 1.5,
+        sugars: 1.5,
+      },
+      protein: 20.7
+    }
+  },
+  {
+    id: "20",
+    name: "Chou",
+    color: "Rouge",
+    macros: {
+      calories: 25,
+      fat: 0.1,
+      carbs: {
+        total: 5.8,
+        fiber: 2.5,
+        sugars: 3.2,
+      },
+      protein: 1.3
+    }
+  },
+  {
+    id: "21",
+    name: "Tortilla",
+    brand: "Saveurs du four",
+    flavour: "Originales",
+    macros: {
+      calories: 295,
+      fat: 7.4,
+      carbs: {
+        total: 49.2,
+        fiber: 1.6,
+        sugars: 4.9,
+      },
+      protein: 8.2
+    }
+  },
+  {
+    id: "22",
+    name: "Tortilla",
+    brand: "Saveurs du four",
+    flavour: "Originales",
+    macros: {
+      calories: 295,
+      fat: 7.4,
+      carbs: {
+        total: 49.2,
+        fiber: 1.6,
+        sugars: 4.9,
+      },
+      protein: 8.2
+    }
+  },
+  {
+    id: "23",
+    name: "Kombucha",
+    brand: "Rise",
+    flavour: "Bleuet / Érable",
+    macros: {
+      calories: 10,
+      fat: 0,
+      carbs: {
+        total: 2.4,
+        fiber: 0,
+        sugars: 2.1,
+      },
+      protein: 0
+    }
+  },
+  {
+    id: "24",
+    name: "Carottes",
+    variety: "Mini",
+    brand: "Compliments",
+    macros: {
+      calories: 36,
+      fat: 0,
+      carbs: {
+        total: 8.2,
+        fiber: 2.3,
+        sugars: 4.7,
+      },
+      protein: 1.1
+    }
+  },
+  {
+    id: "25",
+    name: "Concombre",
+    variety: "Anglais",
+    macros: {
+      calories: 15,
+      fat: 0.1,
+      carbs: {
+        total: 3.6,
+        fiber: 0.5,
+        sugars: 1.7,
+      },
+      protein: 0.7
+    }
+  },
+  {
+    id: "26",
+    name: "Saumon Fumé",
+    brand: "Vasco",
+    macros: {
+      calories: 228,
+      fat: 15.8,
+      carbs: {
+        total: 0,
+        fiber: 0,
+        sugars: 0,
+      },
+      protein: 12
+    }
+  },
+  {
+    id: "27",
+    name: "Avocat",
+    variety: "Hass",
+    macros: {
+      calories: 127,
+      fat: 15,
+      carbs: {
+        total: 10,
+        fiber: 6.7,
+        sugars: 0,
+      },
+      protein: 0
+    }
+  },
+  {
+    id: "28",
+    name: "Jus de citron",
+    macros: {
+      calories: 24,
+      fat: 0.8,
+      carbs: {
+        total: 2.1,
+        fiber: 0.4,
+        sugars: 2.1,
+      },
+      protein: 0.8
+    }
+  },
+  {
+    id: "29",
+    name: "Chips de tortilla",
+    brand: "Montréal Nachos",
+    flavour: "Multigrain",
+    macros: {
+      calories: 500,
+      fat: 25,
+      carbs: {
+        total: 64.3,
+        fiber: 7.1,
+        sugars: 0,
+      },
+      protein: 7.1
     }
   },
 ]
