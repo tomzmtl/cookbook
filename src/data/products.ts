@@ -1,4 +1,3 @@
-import { size } from "lodash-es";
 import { Product } from "../types";
 
 /**
