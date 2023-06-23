@@ -77,7 +77,7 @@ const products: Product[] = [
   {
     id: "6",
     name: "Oignons",
-    color: "Rouge",
+    color: "Rouge/Blanc",
     macros: {
       calories: 40,
       fat: 0.1,
@@ -325,22 +325,6 @@ const products: Product[] = [
     }
   },
   {
-    id: "22",
-    name: "Tortilla",
-    brand: "Saveurs du four",
-    flavour: "Originales",
-    macros: {
-      calories: 295,
-      fat: 7.4,
-      carbs: {
-        total: 49.2,
-        fiber: 1.6,
-        sugars: 4.9,
-      },
-      protein: 8.2
-    }
-  },
-  {
     id: "23",
     name: "Kombucha",
     brand: "Rise",
@@ -445,6 +429,142 @@ const products: Product[] = [
         sugars: 0,
       },
       protein: 7.1
+    }
+  },
+  {
+    id: "30",
+    name: "Pamplemousse",
+    color: "Rose",
+    macros: {
+      calories: 45,
+      fat: 0,
+      carbs: {
+        total: 11.6,
+        fiber: 0,
+        sugars: 11.6,
+      },
+      protein: 0
+    }
+  },
+  {
+    id: "31",
+    name: "Poire",
+    macros: {
+      calories: 58,
+      fat: 0.1,
+      carbs: {
+        total: 15.2,
+        fiber: 3.1,
+        sugars: 9.8,
+      },
+      protein: 0.4
+    }
+  },
+  {
+    id: "32",
+    name: "Yogourt Grec 0%",
+    brand: "Skotidakis",
+    macros: {
+      calories: 63,
+      fat: 0,
+      carbs: {
+        total: 5.7,
+        fiber: 0,
+        sugars: 2.8,
+      },
+      protein: 10.3
+    }
+  },
+  {
+    id: "33",
+    name: "Banane",
+    macros: {
+      calories: 89,
+      fat: 0.3,
+      carbs: {
+        total: 22.8,
+        fiber: 2.6,
+        sugars: 12.2,
+      },
+      protein: 1.1
+    }
+  },
+  {
+    id: "34",
+    name: "Kiwi",
+    macros: {
+      calories: 61,
+      fat: 0.5,
+      carbs: {
+        total: 14.7,
+        fiber: 3,
+        sugars: 9,
+      },
+      protein: 1.1
+    }
+  },
+  {
+    id: "35",
+    name: "Fromage",
+    brand: "Compliments",
+    variety: "Cheddar fort",
+    macros: {
+      calories: 400,
+      fat: 36.7,
+      carbs: {
+        total: 3.3,
+        fiber: 0,
+        sugars: 0,
+      },
+      protein: 23.3
+    }
+  },
+  {
+    id: "36",
+    name: "Poitrine de poulet",
+    brand: "Maple Leaf / Natural selections",
+    flavour: "Rôtie au four",
+    format: "Émincée",
+    macros: {
+      calories: 100,
+      fat: 1.6,
+      carbs: {
+        total: 0,
+        fiber: 0,
+        sugars: 0,
+      },
+      protein: 21.6
+    }
+  },
+  {
+    id: "37",
+    name: "Goberge d'Alaska",
+    brand: "Compliments",
+    flavour: "Crabe",
+    format: "En bâtonnets",
+    macros: {
+      calories: 90,
+      fat: 0,
+      carbs: {
+        total: 16,
+        fiber: 0,
+        sugars: 3,
+      },
+      protein: 7
+    }
+  },
+  {
+    id: "38",
+    name: "Cantaloup",
+    macros: {
+      calories: 34,
+      fat: 0.2,
+      carbs: {
+        total: 8.2,
+        fiber: 0.9,
+        sugars: 7.9,
+      },
+      protein: 0.8
     }
   },
 ]
