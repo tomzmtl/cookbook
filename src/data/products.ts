@@ -644,6 +644,35 @@ const products: Product[] = [
       protein: 16
     }
   },
+  {
+    id: "44",
+    name: "Fraises",
+    macros: {
+      calories: 32,
+      fat: 0.3,
+      carbs: {
+        total: 7.7,
+        fiber: 2,
+        sugars: 4.9,
+      },
+      protein: 0.7
+    }
+  },
+  {
+    id: "45",
+    name: "Sirop d'érable",
+    brand: "Panache",
+    macros: {
+      calories: 306,
+      fat: 0,
+      carbs: {
+        total: 76.4,
+        fiber: 0,
+        sugars: 66.7
+      },
+      protein: 0
+    }
+  },
 ]
 
 export default products
