@@ -4,7 +4,6 @@ import products from "../../data/products"
 import { Product } from '../../types'
 import { ChangeEvent, SyntheticEvent, useState } from 'react'
 import { Add } from '@mui/icons-material'
-import { StackProps } from "@mui/system"
 
 type Ingredient = {
   product: Product,
@@ -78,11 +77,6 @@ const App = () => {
   })
 
   const totals = calculateTotals(ingredients)
-
-  const stackProps: StackProps = {
-    direction: { xs: 'column', sm: 'row' },
-    spacing: { xs: 1, sm: 2, md: 4 }
-  }
 
   return (
     <Sheet className="App" sx={{ p: 2 }}>
