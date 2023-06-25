@@ -566,6 +566,84 @@ const products: Product[] = [
       protein: 0.8
     }
   },
+  {
+    id: "39",
+    name: "Lait d'amande",
+    brand: "Natura",
+    flavour: "Original",
+    macros: {
+      calories: 24,
+      fat: 1.9,
+      carbs: {
+        total: 6.1,
+        fiber: 0.8,
+        sugars: 4.6,
+      },
+      protein: 0.7
+    }
+  },
+  {
+    id: "40",
+    name: "Huile de sésame",
+    brand: "Pearl River Bridge",
+    macros: {
+      calories: 929,
+      fat: 100,
+      carbs: {
+        total: 0,
+        fiber: 0,
+        sugars: 0,
+      },
+      protein: 0
+    }
+  },
+  {
+    id: "41",
+    name: "Sauce soya",
+    brand: "Kimlan",
+    type: "Foncée",
+    macros: {
+      calories: 89,
+      fat: 0,
+      carbs: {
+        total: 11.8,
+        fiber: 0,
+        sugars: 11.8,
+      },
+      protein: 5.8
+    }
+  },
+  {
+    id: "42",
+    name: "Mirin",
+    brand: "Angel",
+    macros: {
+      calories: 174,
+      fat: 0,
+      carbs: {
+        total: 41.8,
+        fiber: 0,
+        sugars: 40,
+      },
+      protein: 0.1
+    }
+  },
+  {
+    id: "43",
+    name: "Tofu",
+    brand: "Soyarie",
+    type: "Extra ferme",
+    macros: {
+      calories: 130,
+      fat: 8,
+      carbs: {
+        total: 0,
+        fiber: 0,
+        sugars: 1,
+      },
+      protein: 16
+    }
+  },
 ]
 
 export default products

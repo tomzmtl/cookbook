@@ -1,9 +1,10 @@
 import { compact } from "lodash-es"
-import { Autocomplete, Button, FormControl, FormLabel, Input, List, ListItem, Sheet, Stack } from '@mui/joy'
+import { Autocomplete, Button, Divider, FormControl, FormLabel, Input, List, ListItem, Sheet, Stack } from '@mui/joy'
 import products from "../../data/products"
 import { Product } from '../../types'
 import { ChangeEvent, SyntheticEvent, useState } from 'react'
 import { Add } from '@mui/icons-material'
+import { StackProps } from "@mui/system"
 
 type Ingredient = {
   product: Product,
@@ -22,6 +23,7 @@ const displayProtein = (protein: number) => protein.toFixed(1)
 const getOptionLabel = (product: Product): string => compact([
   product.name,
   product.variety,
+  product.type,
   product.brand,
   product.color,
   product.flavour,
@@ -77,6 +79,11 @@ const App = () => {
 
   const totals = calculateTotals(ingredients)
 
+  const stackProps: StackProps = {
+    direction: { xs: 'column', sm: 'row' },
+    spacing: { xs: 1, sm: 2, md: 4 }
+  }
+
   return (
     <Sheet className="App" sx={{ p: 2 }}>
       <List>
@@ -85,8 +92,15 @@ const App = () => {
           {`Total: Calories: ${displayCalories(totals.calories)}, Protéines: ${displayProtein(totals.protein)}g`}
         </ListItem>
       </List>
-      <Stack direction="row" key={ingredients.length} spacing={1} marginTop={5}>
-        <FormControl>
+      <Divider />
+      <Stack
+        direction={{ xs: 'column', sm: 'row' }}
+        spacing={{ xs: 2, sm: 1 }}
+        key={ingredients.length}
+        marginTop={3}
+        maxWidth={700}
+      >
+        <FormControl sx={{ width: "100%" }}>
           <FormLabel>Produit</FormLabel>
           <Autocomplete
             sx={{ width: "100%" }}
@@ -100,8 +114,14 @@ const App = () => {
           <FormLabel>Poids</FormLabel>
           <Input value={selectedWeight} onChange={handleChangeWeight} placeholder="Poids (g)" />
         </FormControl>
-        <Button startDecorator={<Add />} onClick={handleAddIngredient} sx={{ height: 40, alignSelf: "flex-end" }}>Ajouter</Button>
       </Stack>
+      <Button
+          startDecorator={<Add />}
+          onClick={handleAddIngredient}
+          sx={{ width: { xs: "100%", sm: "auto" }, marginTop: 3 }}
+        >
+            Ajouter
+        </Button>
     </Sheet>
   )
 }
