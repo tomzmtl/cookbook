@@ -673,6 +673,51 @@ const products: Product[] = [
       protein: 0
     }
   },
+  {
+    id: "46",
+    name: "Pop Corn",
+    brand: "Smart Pop",
+    macros: {
+      calories: 343,
+      fat: 5,
+      carbs: {
+        total: 70,
+        fiber: 11.4,
+        sugars: 1.4
+      },
+      protein: 10
+    }
+  },
+  {
+    id: "47",
+    name: "Moutarde",
+    brand: "Maille",
+    variety: "Dijon",
+    macros: {
+      calories: 159,
+      fat: 7.9,
+      carbs: {
+        total: 0,
+        fiber: 0,
+        sugars: 0
+      },
+      protein: 6.3
+    }
+  },
+  {
+    id: "48",
+    name: "Filets de porc",
+    macros: {
+      calories: 143,
+      fat: 3.5,
+      carbs: {
+        total: 0,
+        fiber: 0,
+        sugars: 0
+      },
+      protein: 26.2
+    }
+  },
 ]
 
 export default products
