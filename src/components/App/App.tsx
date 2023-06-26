@@ -110,7 +110,12 @@ const App = () => {
           </FormControl>
           <FormControl>
             <FormLabel>Poids</FormLabel>
-            <Input value={selectedWeight} onChange={handleChangeWeight} placeholder="Poids (g)" />
+            <Input
+              value={selectedWeight}
+              onChange={handleChangeWeight}
+              placeholder="Poids (g)"
+              slotProps={{ input: { inputMode: "numeric" } }}
+            />
           </FormControl>
         </Stack>
         <Button
