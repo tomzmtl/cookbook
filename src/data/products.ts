@@ -471,7 +471,7 @@ const products: Product[] = [
   },
   {
     id: "54",
-    name: "Yogourt grec 0%",
+    name: "Yogourt Grec 0%",
     brand: "Compliments",
     macros: {
       calories: 46,
