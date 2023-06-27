@@ -478,6 +478,16 @@ const products: Product[] = [
       protein: 9.7
     }
   },
+  {
+    id: "55",
+    name: "Protéine",
+    brand: "LeanFit",
+    flavour: "Vanille",
+    macros: {
+      calories: 407,
+      protein: 78.1
+    }
+  },
 ]
 
 export default products
