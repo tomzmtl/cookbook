@@ -31,11 +31,12 @@ const getOptionLabel = (product: Product): string => compact([
 ]).join(", ")
 
 const calculateTotals = (ingredients: Ingredient[]) => {
-  const totals = { calories: 0, protein: 0 }
+  const totals = { calories: 0, protein: 0, weight: 0 }
 
   for (const ingredient of ingredients) {
     totals.calories += (ingredient.product.macros.calories / 100) * ingredient.weight
     totals.protein += (ingredient.product.macros.protein / 100) * ingredient.weight
+    totals.weight += ingredient.weight
   }
 
   return totals
@@ -85,7 +86,7 @@ const App = () => {
           {renderSelectedIngredients()}
           <ListItem>
             <Typography fontWeight={700}>
-              {`Total: Calories: ${displayCalories(totals.calories)}, Protéines: ${displayProtein(totals.protein)}`}
+              {`Total: Calories: ${displayCalories(totals.calories)}, Protéines: ${displayProtein(totals.protein)}, Weight: ${totals.weight}g`}
             </Typography>
           </ListItem>
         </List>
@@ -114,7 +115,7 @@ const App = () => {
               value={selectedWeight}
               onChange={handleChangeWeight}
               placeholder="Poids (g)"
-              slotProps={{ input: { inputMode: "numeric" } }}
+              slotProps={{ input: { type: "number", inputMode: "numeric" } }}
             />
           </FormControl>
         </Stack>

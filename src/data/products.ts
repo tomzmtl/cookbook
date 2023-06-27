@@ -1,32 +1,11 @@
 import { Product } from "../types";
 
-/**
-
-macros: {
-  calories: 0,
-  fat: 0,
-  carbs: {
-    sugars: 0,
-    fiber: 0,
-    total: 0
-  },
-  protein: 0
-}
-
-*/
-
 const products: Product[] = [
   {
     id: "1",
     name: "Xylitol",
     macros: {
       calories: 100,
-      fat: 0,
-      carbs: {
-        sugars: 0,
-        fiber: 0,
-        total: 25
-      },
       protein: 0
     }
   },
@@ -35,12 +14,6 @@ const products: Product[] = [
     name: "Café",
     macros: {
       calories: 1,
-      fat: 0,
-      carbs: {
-        sugars: 0,
-        fiber: 0,
-        total: 0
-      },
       protein: 0.1
     }
   },
@@ -50,12 +23,6 @@ const products: Product[] = [
     color: "Blanc",
     macros: {
       calories: 21,
-      fat: 0.3,
-      carbs: {
-        sugars: 1.7,
-        fiber: 1,
-        total: 3.3
-      },
       protein: 3.1
     }
   },
@@ -64,12 +31,6 @@ const products: Product[] = [
     name: "Courgettes",
     macros: {
       calories: 16,
-      fat: 0.2,
-      carbs: {
-        total: 3.4,
-        fiber: 1.1,
-        sugars: 1.7,
-      },
       protein: 1.2
     }
   },
@@ -79,12 +40,6 @@ const products: Product[] = [
     color: "Rouge/Blanc",
     macros: {
       calories: 40,
-      fat: 0.1,
-      carbs: {
-        total: 9.3,
-        fiber: 2.1,
-        sugars: 4.2,
-      },
       protein: 1.1
     }
   },
@@ -96,12 +51,6 @@ const products: Product[] = [
     format: "En morceaux",
     macros: {
       calories: 109,
-      fat: 0.3,
-      carbs: {
-        total: 0,
-        fiber: 0,
-        sugars: 0,
-      },
       protein: 23.6
     }
   },
@@ -113,12 +62,6 @@ const products: Product[] = [
     extra: "Sans sel ajouté",
     macros: {
       calories: 38,
-      fat: 0.2,
-      carbs: {
-        total: 8.3,
-        fiber: 2.2,
-        sugars: 4.5,
-      },
       protein: 1.5
     }
   },
@@ -129,12 +72,6 @@ const products: Product[] = [
     format: "Rigatoni",
     macros: {
       calories: 365,
-      fat: 1.8,
-      carbs: {
-        total: 75.3,
-        fiber: 4.7,
-        sugars: 2.4,
-      },
       protein: 12.9
     }
   },
@@ -143,12 +80,6 @@ const products: Product[] = [
     name: "Gras de bacon",
     macros: {
       calories: 541,
-      fat: 41.8,
-      carbs: {
-        total: 1.4,
-        fiber: 0,
-        sugars: 0,
-      },
       protein: 37
     }
   },
@@ -158,12 +89,6 @@ const products: Product[] = [
     brand: "Compliments",
     macros: {
       calories: 380,
-      fat: 5,
-      carbs: {
-        total: 78,
-        fiber: 14,
-        sugars: 0,
-      },
       protein: 12
     }
   },
@@ -174,12 +99,6 @@ const products: Product[] = [
     format: "En brique",
     macros: {
       calories: 45,
-      fat: 5,
-      carbs: {
-        total: 1,
-        fiber: 0,
-        sugars: 0,
-      },
       protein: 10
     }
   },
@@ -188,12 +107,6 @@ const products: Product[] = [
     name: "Cannelle",
     macros: {
       calories: 247,
-      fat: 1.2,
-      carbs: {
-        total: 80.6,
-        fiber: 53.1,
-        sugars: 2.2,
-      },
       protein: 4
     }
   },
@@ -207,12 +120,6 @@ const products: Product[] = [
     extra: "Sans sucre/gras ajouté",
     macros: {
       calories: 221,
-      fat: 1.6,
-      carbs: {
-        total: 45.3,
-        fiber: 2.3,
-        sugars: 1.7,
-      },
       protein: 8.1
     }
   },
@@ -221,12 +128,6 @@ const products: Product[] = [
     name: "Extrait de vanille",
     macros: {
       calories: 288,
-      fat: 0.1,
-      carbs: {
-        total: 12.7,
-        fiber: 0,
-        sugars: 12.7,
-      },
       protein: 0.1
     }
   },
@@ -236,12 +137,6 @@ const products: Product[] = [
     brand: "Beatrice",
     macros: {
       calories: 50,
-      fat: 1.9,
-      carbs: {
-        total: 4.6,
-        fiber: 0,
-        sugars: 4.6,
-      },
       protein: 3.4
     }
   },
@@ -250,12 +145,6 @@ const products: Product[] = [
     name: "Tomates cerise",
     macros: {
       calories: 18,
-      fat: 0.2,
-      carbs: {
-        total: 3.9,
-        fiber: 1.2,
-        sugars: 2.6,
-      },
       protein: 0.9
     }
   },
@@ -266,12 +155,6 @@ const products: Product[] = [
     brand: "Gifar",
     macros: {
       calories: 16,
-      fat: 0.3,
-      carbs: {
-        total: 3,
-        fiber: 1.5,
-        sugars: 1.5,
-      },
       protein: 1.5
     }
   },
@@ -283,12 +166,6 @@ const products: Product[] = [
     format: "Émincée",
     macros: {
       calories: 87,
-      fat: 0.8,
-      carbs: {
-        total: 3,
-        fiber: 1.5,
-        sugars: 1.5,
-      },
       protein: 20.7
     }
   },
@@ -298,12 +175,6 @@ const products: Product[] = [
     color: "Rouge",
     macros: {
       calories: 25,
-      fat: 0.1,
-      carbs: {
-        total: 5.8,
-        fiber: 2.5,
-        sugars: 3.2,
-      },
       protein: 1.3
     }
   },
@@ -314,12 +185,6 @@ const products: Product[] = [
     flavour: "Originales",
     macros: {
       calories: 295,
-      fat: 7.4,
-      carbs: {
-        total: 49.2,
-        fiber: 1.6,
-        sugars: 4.9,
-      },
       protein: 8.2
     }
   },
@@ -330,12 +195,6 @@ const products: Product[] = [
     flavour: "Bleuet / Érable",
     macros: {
       calories: 10,
-      fat: 0,
-      carbs: {
-        total: 2.4,
-        fiber: 0,
-        sugars: 2.1,
-      },
       protein: 0
     }
   },
@@ -346,12 +205,6 @@ const products: Product[] = [
     brand: "Compliments",
     macros: {
       calories: 36,
-      fat: 0,
-      carbs: {
-        total: 8.2,
-        fiber: 2.3,
-        sugars: 4.7,
-      },
       protein: 1.1
     }
   },
@@ -361,12 +214,6 @@ const products: Product[] = [
     variety: "Anglais",
     macros: {
       calories: 15,
-      fat: 0.1,
-      carbs: {
-        total: 3.6,
-        fiber: 0.5,
-        sugars: 1.7,
-      },
       protein: 0.7
     }
   },
@@ -376,12 +223,6 @@ const products: Product[] = [
     brand: "Vasco",
     macros: {
       calories: 228,
-      fat: 15.8,
-      carbs: {
-        total: 0,
-        fiber: 0,
-        sugars: 0,
-      },
       protein: 12
     }
   },
@@ -391,12 +232,6 @@ const products: Product[] = [
     variety: "Hass",
     macros: {
       calories: 127,
-      fat: 15,
-      carbs: {
-        total: 10,
-        fiber: 6.7,
-        sugars: 0,
-      },
       protein: 0
     }
   },
@@ -405,12 +240,6 @@ const products: Product[] = [
     name: "Jus de citron",
     macros: {
       calories: 24,
-      fat: 0.8,
-      carbs: {
-        total: 2.1,
-        fiber: 0.4,
-        sugars: 2.1,
-      },
       protein: 0.8
     }
   },
@@ -421,12 +250,6 @@ const products: Product[] = [
     flavour: "Multigrain",
     macros: {
       calories: 500,
-      fat: 25,
-      carbs: {
-        total: 64.3,
-        fiber: 7.1,
-        sugars: 0,
-      },
       protein: 7.1
     }
   },
@@ -436,12 +259,6 @@ const products: Product[] = [
     color: "Rose",
     macros: {
       calories: 45,
-      fat: 0,
-      carbs: {
-        total: 11.6,
-        fiber: 0,
-        sugars: 11.6,
-      },
       protein: 0
     }
   },
@@ -450,12 +267,6 @@ const products: Product[] = [
     name: "Poire",
     macros: {
       calories: 58,
-      fat: 0.1,
-      carbs: {
-        total: 15.2,
-        fiber: 3.1,
-        sugars: 9.8,
-      },
       protein: 0.4
     }
   },
@@ -465,12 +276,6 @@ const products: Product[] = [
     brand: "Skotidakis",
     macros: {
       calories: 63,
-      fat: 0,
-      carbs: {
-        total: 5.7,
-        fiber: 0,
-        sugars: 2.8,
-      },
       protein: 10.3
     }
   },
@@ -479,12 +284,6 @@ const products: Product[] = [
     name: "Banane",
     macros: {
       calories: 89,
-      fat: 0.3,
-      carbs: {
-        total: 22.8,
-        fiber: 2.6,
-        sugars: 12.2,
-      },
       protein: 1.1
     }
   },
@@ -493,12 +292,6 @@ const products: Product[] = [
     name: "Kiwi",
     macros: {
       calories: 61,
-      fat: 0.5,
-      carbs: {
-        total: 14.7,
-        fiber: 3,
-        sugars: 9,
-      },
       protein: 1.1
     }
   },
@@ -509,12 +302,6 @@ const products: Product[] = [
     variety: "Cheddar fort",
     macros: {
       calories: 400,
-      fat: 36.7,
-      carbs: {
-        total: 3.3,
-        fiber: 0,
-        sugars: 0,
-      },
       protein: 23.3
     }
   },
@@ -526,12 +313,6 @@ const products: Product[] = [
     format: "Émincée",
     macros: {
       calories: 100,
-      fat: 1.6,
-      carbs: {
-        total: 0,
-        fiber: 0,
-        sugars: 0,
-      },
       protein: 21.6
     }
   },
@@ -543,12 +324,6 @@ const products: Product[] = [
     format: "En bâtonnets",
     macros: {
       calories: 90,
-      fat: 0,
-      carbs: {
-        total: 16,
-        fiber: 0,
-        sugars: 3,
-      },
       protein: 7
     }
   },
@@ -557,12 +332,6 @@ const products: Product[] = [
     name: "Cantaloup",
     macros: {
       calories: 34,
-      fat: 0.2,
-      carbs: {
-        total: 8.2,
-        fiber: 0.9,
-        sugars: 7.9,
-      },
       protein: 0.8
     }
   },
@@ -573,12 +342,6 @@ const products: Product[] = [
     flavour: "Original",
     macros: {
       calories: 24,
-      fat: 1.9,
-      carbs: {
-        total: 6.1,
-        fiber: 0.8,
-        sugars: 4.6,
-      },
       protein: 0.7
     }
   },
@@ -588,12 +351,6 @@ const products: Product[] = [
     brand: "Pearl River Bridge",
     macros: {
       calories: 929,
-      fat: 100,
-      carbs: {
-        total: 0,
-        fiber: 0,
-        sugars: 0,
-      },
       protein: 0
     }
   },
@@ -604,12 +361,6 @@ const products: Product[] = [
     type: "Foncée",
     macros: {
       calories: 89,
-      fat: 0,
-      carbs: {
-        total: 11.8,
-        fiber: 0,
-        sugars: 11.8,
-      },
       protein: 5.8
     }
   },
@@ -619,12 +370,6 @@ const products: Product[] = [
     brand: "Angel",
     macros: {
       calories: 174,
-      fat: 0,
-      carbs: {
-        total: 41.8,
-        fiber: 0,
-        sugars: 40,
-      },
       protein: 0.1
     }
   },
@@ -635,12 +380,6 @@ const products: Product[] = [
     type: "Extra ferme",
     macros: {
       calories: 130,
-      fat: 8,
-      carbs: {
-        total: 0,
-        fiber: 0,
-        sugars: 1,
-      },
       protein: 16
     }
   },
@@ -649,12 +388,6 @@ const products: Product[] = [
     name: "Fraises",
     macros: {
       calories: 32,
-      fat: 0.3,
-      carbs: {
-        total: 7.7,
-        fiber: 2,
-        sugars: 4.9,
-      },
       protein: 0.7
     }
   },
@@ -664,12 +397,6 @@ const products: Product[] = [
     brand: "Panache",
     macros: {
       calories: 306,
-      fat: 0,
-      carbs: {
-        total: 76.4,
-        fiber: 0,
-        sugars: 66.7
-      },
       protein: 0
     }
   },
@@ -679,12 +406,6 @@ const products: Product[] = [
     brand: "Smart Pop",
     macros: {
       calories: 343,
-      fat: 5,
-      carbs: {
-        total: 70,
-        fiber: 11.4,
-        sugars: 1.4
-      },
       protein: 10
     }
   },
@@ -695,12 +416,6 @@ const products: Product[] = [
     variety: "Dijon",
     macros: {
       calories: 159,
-      fat: 7.9,
-      carbs: {
-        total: 0,
-        fiber: 0,
-        sugars: 0
-      },
       protein: 6.3
     }
   },
@@ -709,13 +424,58 @@ const products: Product[] = [
     name: "Filets de porc",
     macros: {
       calories: 143,
-      fat: 3.5,
-      carbs: {
-        total: 0,
-        fiber: 0,
-        sugars: 0
-      },
       protein: 26.2
+    }
+  },
+  {
+    id: "49",
+    name: "Chou-fleur",
+    macros: {
+      calories: 25,
+      protein: 2
+    }
+  },
+  {
+    id: "50",
+    name: "Petates",
+    extra: "Épluchées",
+    macros: {
+      calories: 86,
+      protein: 1.7
+    }
+  },
+  {
+    id: "51",
+    name: "Crème sûre 1%",
+    brand: "Sealtest",
+    macros: {
+      calories: 42,
+      protein: 5.5
+    }
+  },
+  {
+    id: "52",
+    name: "Paprika",
+    macros: {
+      calories: 289,
+      protein: 14.8
+    }
+  },
+  {
+    id: "53",
+    name: "Poires",
+    macros: {
+      calories: 58,
+      protein: 0.4
+    }
+  },
+  {
+    id: "54",
+    name: "Yogourt grec 0%",
+    brand: "Compliments",
+    macros: {
+      calories: 46,
+      protein: 9.7
     }
   },
 ]
