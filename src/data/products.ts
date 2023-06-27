@@ -488,6 +488,23 @@ const products: Product[] = [
       protein: 78.1
     }
   },
+  {
+    id: "56",
+    name: "Carottes",
+    macros: {
+      calories: 41,
+      protein: 0.8
+    }
+  },
+  {
+    id: "57",
+    name: "Cheddar fort",
+    brand: "Compliments",
+    macros: {
+      calories: 400,
+      protein: 23.3
+    }
+  },
 ]
 
 export default products

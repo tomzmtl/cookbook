@@ -115,7 +115,7 @@ const App = () => {
               value={selectedWeight}
               onChange={handleChangeWeight}
               placeholder="Poids (g)"
-              slotProps={{ input: { type: "number", inputMode: "numeric" } }}
+              slotProps={{ input: { type: "number", inputMode: "decimal" } }}
             />
           </FormControl>
         </Stack>
