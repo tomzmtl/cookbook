@@ -86,7 +86,7 @@ const App = () => {
           {renderSelectedIngredients()}
           <ListItem>
             <Typography fontWeight={700}>
-              {`Total: Calories: ${displayCalories(totals.calories)}, Protéines: ${displayProtein(totals.protein)}, Weight: ${totals.weight}g`}
+              {`Total: Calories: ${displayCalories(totals.calories)}, Protéines: ${displayProtein(totals.protein)}, Weight: ${totals.weight.toFixed(0)}g`}
             </Typography>
           </ListItem>
         </List>

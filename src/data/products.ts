@@ -505,6 +505,51 @@ const products: Product[] = [
       protein: 23.3
     }
   },
+  {
+    id: "57",
+    name: "Poivrons",
+    color: "Rouge",
+    macros: {
+      calories: 38,
+      protein: 1.2
+    }
+  },
+  {
+    id: "58",
+    name: "Origan séché",
+    macros: {
+      calories: 306,
+      protein: 11
+    }
+  },
+  {
+    id: "59",
+    name: "Lait de cajou",
+    brand: "Silk",
+    flavour: "Non-sucré",
+    macros: {
+      calories: 10,
+      protein: 0.4
+    }
+  },
+  {
+    id: "60",
+    name: "Beurre d'arachide en poudre",
+    brand: "PB & Me",
+    macros: {
+      calories: 400,
+      protein: 40
+    }
+  },
+  {
+    id: "61",
+    name: "Cacao",
+    brand: "Fry's",
+    macros: {
+      calories: 400,
+      protein: 20
+    }
+  },
 ]
 
 export default products
