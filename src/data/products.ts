@@ -308,9 +308,7 @@ const products: Product[] = [
   {
     id: "36",
     name: "Poitrine de poulet",
-    brand: "Maple Leaf / Natural selections",
-    flavour: "Rôtie au four",
-    format: "Émincée",
+    brand: "Natural selections",
     macros: {
       calories: 100,
       protein: 21.6
@@ -550,6 +548,86 @@ const products: Product[] = [
       protein: 20
     }
   },
+  {
+    id: "62",
+    name: "Huile d'olive",
+    macros: {
+      calories: 800,
+      protein: 0
+    }
+  },
+  {
+    id: "63",
+    name: "Poulet, Poitrine",
+    macros: {
+      calories: 114,
+      protein: 21.2
+    }
+  },
+  {
+    id: "64",
+    name: "Pain lavash",
+    brand: "Joseph's Bakery",
+    macros: {
+      calories: 188,
+      protein: 18.7
+    }
+  },
+  {
+    id: "65",
+    name: "Fraises congelées",
+    brand: "Compliments",
+    macros: {
+      calories: 36,
+      protein: 0.7
+    }
+  },
+  {
+    id: "66",
+    name: "Lait 0%",
+    brand: "Béatrice",
+    macros: {
+      calories: 38,
+      protein: 3.7
+    }
+  },
+  {
+    id: "67",
+    name: "Brocoli",
+    macros: {
+      calories: 15,
+      protein: 1.2
+    }
+  },
+  {
+    id: "68",
+    name: "Pain en tranches",
+    brand: "Villagio",
+    type: "Blé entier",
+    macros: {
+      calories: 240,
+      protein: 9.8
+    }
+  },
 ]
 
-export default products
+const recipes: Product[] = [
+  {
+    id: "r-1",
+    name: "🍽️ Purée patate/chou-fleur",
+    macros: {
+      calories: 54,
+      protein: 2.2,
+    }
+  },
+  {
+    id: "r-2",
+    name: "🍽️ Poulet origan",
+    macros: {
+      calories: 120,
+      protein: 21,
+    }
+  }
+]
+
+export default [...products, ...recipes]

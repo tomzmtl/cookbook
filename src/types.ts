@@ -15,3 +15,8 @@ export type Product = {
     protein: number
   }
 }
+
+export type Ingredient = {
+  product: Product,
+  weight: number
+}

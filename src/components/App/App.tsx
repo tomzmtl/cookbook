@@ -1,23 +1,10 @@
 import { compact } from "lodash-es"
-import { Autocomplete, Button, Divider, FormControl, FormLabel, Input, List, ListItem, Sheet, Stack, Typography } from '@mui/joy'
+import { Autocomplete, Button, Divider, FormControl, FormLabel, Input, Sheet, Stack } from '@mui/joy'
 import products from "../../data/products"
-import { Product } from '../../types'
+import { Ingredient, Product } from '../../types'
 import { ChangeEvent, SyntheticEvent, useState } from 'react'
 import { Add } from '@mui/icons-material'
-
-type Ingredient = {
-  product: Product,
-  weight: number
-}
-
-const getMacros = (ingredient: Ingredient) => ({
-  calories: ((ingredient.product.macros.calories / 100) * ingredient.weight),
-  protein: ((ingredient.product.macros.protein / 100) * ingredient.weight),
-})
-
-const displayCalories = (calories: number) => calories.toFixed(0)
-
-const displayProtein = (protein: number) => protein.toFixed(1)
+import IngredientList from "../../IngredientList/IngredientList"
 
 const getOptionLabel = (product: Product): string => compact([
   product.name,
@@ -29,18 +16,6 @@ const getOptionLabel = (product: Product): string => compact([
   product.format,
   product.extra
 ]).join(", ")
-
-const calculateTotals = (ingredients: Ingredient[]) => {
-  const totals = { calories: 0, protein: 0, weight: 0 }
-
-  for (const ingredient of ingredients) {
-    totals.calories += (ingredient.product.macros.calories / 100) * ingredient.weight
-    totals.protein += (ingredient.product.macros.protein / 100) * ingredient.weight
-    totals.weight += ingredient.weight
-  }
-
-  return totals
-}
 
 const App = () => {
   const [ingredients, setIngredients] = useState<Ingredient[]>([])
@@ -57,40 +32,27 @@ const App = () => {
     setSelectedWeight(e.target.value)
   }
 
-  const handleAddIngredient = () => {
+  const handleSaveIngredient = () => {
     if (selectedProduct && selectedWeight) {
       setIngredients(ingredients.concat([{
         product: selectedProduct,
         weight: Number(selectedWeight)
       }]))
       setSelectedWeight("")
+      setSelectedProduct(null)
     }
   }
 
-  const renderSelectedIngredients = () => ingredients.map(ingredient => {
-    const macros = getMacros(ingredient)
-
-    return (
-      <ListItem key={ingredient.product.id}>
-        {`${ingredient.product.name}: ${ingredient.weight}g (C: ${displayCalories(macros.calories)}, P: ${displayProtein(macros.protein)})`}
-      </ListItem>
-    )
-  })
-
-  const totals = calculateTotals(ingredients)
+  const removeIngredient = (productId: string) => {
+    setIngredients(ingredients.filter(ingredient => ingredient.product.id !== productId))
+  }
 
   return (
     <Sheet className="App">
-      <Sheet>
-        <List>
-          {renderSelectedIngredients()}
-          <ListItem>
-            <Typography fontWeight={700}>
-              {`Total: Calories: ${displayCalories(totals.calories)}, Protéines: ${displayProtein(totals.protein)}, Weight: ${totals.weight.toFixed(0)}g`}
-            </Typography>
-          </ListItem>
-        </List>
-      </Sheet>
+      <IngredientList
+        ingredients={ingredients}
+        removeIngredient={removeIngredient}
+      />
       <Divider />
       <Sheet sx={{ p: 2, position: "sticky", bottom: 0}}>
         <Stack
@@ -107,6 +69,8 @@ const App = () => {
               getOptionLabel={getOptionLabel}
               onChange={handleChangeProduct}
               placeholder="Ajouter ingredient..."
+              value={selectedProduct}
+              isOptionEqualToValue={(option, value) => option.id === value.id}
             />
           </FormControl>
           <FormControl>
@@ -121,7 +85,7 @@ const App = () => {
         </Stack>
         <Button
           startDecorator={<Add />}
-          onClick={handleAddIngredient}
+          onClick={handleSaveIngredient}
           sx={{ width: { xs: "100%", sm: "auto" }, marginTop: 3 }}
         >
           Ajouter
