@@ -27,14 +27,13 @@ const IngredientList = ({ ingredients, removeIngredient, editIngredient }: Props
   const renderSelectedIngredients = () => ingredients.map(ingredient => {
     return (
       <IngredientListItem
+        key={ingredient.product.id}
         ingredient={ingredient}
         removeIngredient={removeIngredient}
         editIngredient={editIngredient}
       />
     )
   })
-
-  
 
   return (
     <List sx={{ maxWidth: "700px" }}>

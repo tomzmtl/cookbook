@@ -6,6 +6,7 @@ import { ChangeEvent, SyntheticEvent, useState } from 'react'
 import { Add } from '@mui/icons-material'
 import IngredientList from "../IngredientList"
 import IngredientEditModal from "../IngredientEditModal"
+import { replaceAtIndex } from "../../helpers/array"
 
 const getOptionLabel = (product: Product): string => compact([
   product.name,
@@ -43,6 +44,11 @@ const App = () => {
       setSelectedWeight("")
       setSelectedProduct(null)
     }
+  }
+
+  const updateIngredient = (ingredient: Ingredient) => {
+    const index = ingredients.findIndex(ing => ing.product.id === ingredient.product.id)
+    setIngredients(replaceAtIndex(ingredients, index, ingredient))
   }
 
   const editIngredient = (productId: string) => {
@@ -101,7 +107,13 @@ const App = () => {
         >
           Ajouter
         </Button>
-        <IngredientEditModal ingredient={isEditing} onClose={() => setIsEditing(null)} />
+        {isEditing && (
+          <IngredientEditModal
+            ingredient={isEditing}
+            onClose={() => setIsEditing(null)}
+            updateIngredient={updateIngredient}
+          />
+        )}
       </Sheet>
     </Sheet>
   )
