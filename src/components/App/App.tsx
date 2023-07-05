@@ -4,7 +4,8 @@ import products from "../../data/products"
 import { Ingredient, Product } from '../../types'
 import { ChangeEvent, SyntheticEvent, useState } from 'react'
 import { Add } from '@mui/icons-material'
-import IngredientList from "../../IngredientList/IngredientList"
+import IngredientList from "../IngredientList"
+import IngredientEditModal from "../IngredientEditModal"
 
 const getOptionLabel = (product: Product): string => compact([
   product.name,
@@ -21,6 +22,7 @@ const App = () => {
   const [ingredients, setIngredients] = useState<Ingredient[]>([])
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
   const [selectedWeight, setSelectedWeight] = useState<string>("")
+  const [isEditing, setIsEditing] = useState<Ingredient|null>(null)
   
   const handleChangeProduct = (_e: SyntheticEvent, product: Product | null) => {
     if (product) {
@@ -43,6 +45,14 @@ const App = () => {
     }
   }
 
+  const editIngredient = (productId: string) => {
+    const ingredient = ingredients.find(ingredient => ingredient.product.id === productId)
+
+    if (ingredient) {
+      setIsEditing(ingredient)
+    }
+  }
+
   const removeIngredient = (productId: string) => {
     setIngredients(ingredients.filter(ingredient => ingredient.product.id !== productId))
   }
@@ -52,6 +62,7 @@ const App = () => {
       <IngredientList
         ingredients={ingredients}
         removeIngredient={removeIngredient}
+        editIngredient={editIngredient}
       />
       <Divider />
       <Sheet sx={{ p: 2, position: "sticky", bottom: 0}}>
@@ -90,6 +101,7 @@ const App = () => {
         >
           Ajouter
         </Button>
+        <IngredientEditModal ingredient={isEditing} onClose={() => setIsEditing(null)} />
       </Sheet>
     </Sheet>
   )

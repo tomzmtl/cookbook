@@ -1,5 +1,7 @@
 import { Product } from "../types";
 
+const sortByName = (a: Product, b: Product) => a.name.localeCompare(b.name)
+
 const products: Product[] = [
   {
     id: "1",
@@ -609,7 +611,65 @@ const products: Product[] = [
       protein: 9.8
     }
   },
-]
+  {
+    id: "69",
+    name: "Oignons",
+    color: "Vert",
+    macros: {
+      calories: 32,
+      protein: 1.8
+    }
+  },
+  {
+    id: "70",
+    name: "Mayo",
+    brand: "Hellman's",
+    extra: "Légère",
+    macros: {
+      calories: 258,
+      protein: 0.6
+    }
+  },
+  {
+    id: "71",
+    name: "Tortilla",
+    brand: "POM",
+    extra: "Blé entier",
+    macros: {
+      calories: 279,
+      protein: 8.1
+    }
+  },
+  {
+    id: "72",
+    name: "Bonbon",
+    brand: "Werther's Original",
+    extra: "Sans sucre ajouté",
+    macros: {
+      calories: 250,
+      protein: 0
+    }
+  },
+  {
+    id: "73",
+    name: "Olives",
+    brand: "Pastene",
+    color: "Noires",
+    format: "Entières",
+    macros: {
+      calories: 219,
+      protein: 1.2
+    }
+  },
+  {
+    id: "74",
+    name: "Ail",
+    macros: {
+      calories: 149,
+      protein: 6.4
+    }
+  },
+].sort(sortByName)
 
 const recipes: Product[] = [
   {
@@ -628,6 +688,6 @@ const recipes: Product[] = [
       protein: 21,
     }
   }
-]
+].sort(sortByName)
 
 export default [...products, ...recipes]
