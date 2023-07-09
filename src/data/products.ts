@@ -669,25 +669,115 @@ const products: Product[] = [
       protein: 6.4
     }
   },
-].sort(sortByName)
+  {
+    id: "75",
+    name: "Framboises congelées",
+    brand: "Compliments",
+    macros: {
+      calories: 50,
+      protein: 1.2
+    }
+  },
+  {
+    id: "76",
+    name: "Dumplings",
+    brand: "Gilly",
+    flavour: "Porc/Ciboulette",
+    macros: {
+      calories: 180,
+      protein: 7
+    }
+  },
+  {
+    id: "77",
+    name: "Sauce soya",
+    brand: "VH",
+    macros: {
+      calories: 30,
+      protein: 1.7
+    }
+  },
+  {
+    id: "78",
+    name: "Bacon de poulet",
+    brand: "Compliments",
+    macros: {
+      calories: 167,
+      protein: 14.2
+    }
+  },
+  {
+    id: "79",
+    name: "Edamame congelées",
+    brand: "Compliments",
+    macros: {
+      calories: 118,
+      protein: 17.6
+    }
+  },
+  {
+    id: "80",
+    name: "Saumon",
+    macros: {
+      calories: 182,
+      protein: 25.4
+    }
+  },
+  {
+    id: "81",
+    name: "Bleuets",
+    macros: {
+      calories: 57,
+      protein: 0.8
+    }
+  },
+  {
+    id: "82",
+    name: "Bleuets congelés",
+    brand: "Compliments",
+    macros: {
+      calories: 57,
+      protein: 0.3
+    }
+  },
+  {
+    id: "83",
+    name: "Dinde tranchée",
+    brand: "Paysan",
+    macros: {
+      calories: 91,
+      protein: 16
+    }
+  },
+  {
+    id: "84",
+    name: "Singles",
+    brand: "Kraft",
+    extra: "Léger",
+    macros: {
+      calories: 237,
+      protein: 15.7
+    }
+  },
+]
 
 const recipes: Product[] = [
   {
     id: "r-1",
-    name: "🍽️ Purée patate/chou-fleur",
+    name: "🍽️ Saumon au four",
     macros: {
-      calories: 54,
-      protein: 2.2,
+      calories: 182,
+      protein: 25,
     }
   },
   {
     id: "r-2",
     name: "🍽️ Poulet origan",
     macros: {
-      calories: 120,
-      protein: 21,
+      calories: 123,
+      protein: 20.9,
     }
   }
-].sort(sortByName)
+]
 
-export default [...products, ...recipes]
+export default [...products.sort(sortByName), ...recipes.sort(sortByName)]

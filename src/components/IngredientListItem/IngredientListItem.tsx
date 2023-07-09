@@ -54,13 +54,13 @@ const IngredientListItem = ({ ingredient, editIngredient, removeIngredient }: Pr
           <ListItemDecorator>
             <Edit />
           </ListItemDecorator>
-          Changer quantité
+          Changer le poids
         </MenuItem>
         <MenuItem onClick={handleClickDelete} color="danger">
           <ListItemDecorator sx={{ color: 'inherit' }}>
             <Delete />
           </ListItemDecorator>
-          Delete
+          Supprimer
         </MenuItem>
       </Menu>
     </>
