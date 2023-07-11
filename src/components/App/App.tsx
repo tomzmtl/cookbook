@@ -7,6 +7,7 @@ import { Add } from '@mui/icons-material'
 import IngredientList from "../IngredientList"
 import IngredientEditModal from "../IngredientEditModal"
 import { replaceAtIndex } from "../../helpers/array"
+import { inventoryApi } from "../../features/inventory/api"
 
 const getOptionLabel = (product: Product): string => compact([
   product.name,
@@ -24,6 +25,8 @@ const App = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
   const [selectedWeight, setSelectedWeight] = useState<string>("")
   const [isEditing, setIsEditing] = useState<Ingredient|null>(null)
+
+  inventoryApi.useGetAllQuery({})
   
   const handleChangeProduct = (_e: SyntheticEvent, product: Product | null) => {
     if (product) {
