@@ -759,6 +759,32 @@ const products: Product[] = [
       protein: 15.7
     }
   },
+  {
+    id: "85",
+    name: "Tomates en dés",
+    brand: "Aylmer",
+    extra: "Sans sel ajouté",
+    macros: {
+      calories: 19,
+      protein: 1.4
+    }
+  },
+  {
+    id: "86",
+    name: "Persil",
+    macros: {
+      calories: 36,
+      protein: 3
+    }
+  },
+  {
+    id: "87",
+    name: "Menthe",
+    macros: {
+      calories: 44,
+      protein: 3.3
+    }
+  },
 ]
 
 const recipes: Product[] = [
