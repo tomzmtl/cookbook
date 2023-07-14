@@ -20,3 +20,8 @@ export type Ingredient = {
   product: Product,
   weight: number
 }
+
+export type IntakeReport = {
+  date: string,
+  intake: Ingredient[]
+}

@@ -1,5 +1,5 @@
 import { compact } from "lodash-es"
-import { Autocomplete, Button, Divider, FormControl, FormLabel, Input, Sheet, Stack } from '@mui/joy'
+import { Autocomplete, Button, Divider, FormControl, FormLabel, Input, Sheet, Stack, Typography } from '@mui/joy'
 import products from "../../data/products"
 import { Ingredient, Product } from '../../types'
 import { ChangeEvent, SyntheticEvent, useState } from 'react'
@@ -28,7 +28,7 @@ const App = () => {
   const [isEditing, setIsEditing] = useState<Ingredient|null>(null)
 
   inventoryApi.useGetAllQuery({})
-  reportApi.useGetLatestQuery({})
+  const { data: report } = reportApi.useGetLatestQuery()
   
   const handleChangeProduct = (_e: SyntheticEvent, product: Product | null) => {
     if (product) {
@@ -70,6 +70,8 @@ const App = () => {
 
   return (
     <Sheet className="App">
+      <Typography level="body3" sx={{ px: 2, py: 1 }}>{report?.date}</Typography>
+      <Divider />
       <IngredientList
         ingredients={ingredients}
         removeIngredient={removeIngredient}
