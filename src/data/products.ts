@@ -117,9 +117,7 @@ const products: Product[] = [
     name: "Pain",
     format: "Tranché",
     brand: "Bon Matin",
-    color: "Blanc",
     flavour: "Avec grains entiers",
-    extra: "Sans sucre/gras ajouté",
     macros: {
       calories: 221,
       protein: 8.1
@@ -783,6 +781,43 @@ const products: Product[] = [
     macros: {
       calories: 44,
       protein: 3.3
+    }
+  },
+  {
+    id: "88",
+    name: "Betteraves",
+    macros: {
+      calories: 44,
+      protein: 1.7
+    }
+  },
+  {
+    id: "89",
+    name: "Sriracha",
+    brand: "Huy Fong Foods",
+    macros: {
+      calories: 100,
+      protein: 0
+    }
+  },
+  {
+    id: "90",
+    name: "Pain",
+    type: "Protéiné",
+    brand: "Bon Matin",
+    format: "Tranché",
+    macros: {
+      calories: 245,
+      protein: 16
+    }
+  },
+  {
+    id: "91",
+    name: "Moutarde à l'ancienne",
+    brand: "Compliments",
+    macros: {
+      calories: 84,
+      protein: 5
     }
   },
 ]
