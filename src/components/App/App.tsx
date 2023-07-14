@@ -8,7 +8,7 @@ import IngredientList from "../IngredientList"
 import IngredientEditModal from "../IngredientEditModal"
 import { replaceAtIndex } from "../../helpers/array"
 import { inventoryApi } from "../../features/inventory/api"
-import { reportsApi } from "../../features/reports/api"
+import { reportApi } from "../../features/report/api"
 
 const getOptionLabel = (product: Product): string => compact([
   product.name,
@@ -28,7 +28,7 @@ const App = () => {
   const [isEditing, setIsEditing] = useState<Ingredient|null>(null)
 
   inventoryApi.useGetAllQuery({})
-  reportsApi.useGetQuery({})
+  reportApi.useGetLatestQuery({})
   
   const handleChangeProduct = (_e: SyntheticEvent, product: Product | null) => {
     if (product) {
