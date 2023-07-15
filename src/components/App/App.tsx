@@ -1,9 +1,9 @@
 import { compact } from "lodash-es"
-import { Autocomplete, Button, Divider, FormControl, FormLabel, Input, Sheet, Stack, Typography } from '@mui/joy'
+import { Autocomplete, Button, Divider, FormControl, FormLabel, IconButton, Input, Sheet, Stack, Typography } from '@mui/joy'
 import products from "../../data/products"
 import { Ingredient, Product } from '../../types'
 import { ChangeEvent, SyntheticEvent, useState } from 'react'
-import { Add } from '@mui/icons-material'
+import { Add, DeleteForever } from '@mui/icons-material'
 import IngredientList from "../IngredientList"
 import IngredientEditModal from "../IngredientEditModal"
 import { replaceAtIndex } from "../../helpers/array"
@@ -68,9 +68,19 @@ const App = () => {
     setIngredients(ingredients.filter(ingredient => ingredient.product.id !== productId))
   }
 
+  const handleEmptyList = () => {
+    setIngredients([])
+  }
+
   return (
     <Sheet className="App">
-      <Typography level="body3" sx={{ px: 2, py: 1 }}>{report?.date}</Typography>
+      <Stack justifyContent="space-between" direction="row">
+        <Typography level="body3" sx={{ px: 2, py: 1 }}>{report?.date}</Typography>
+        {ingredients.length > 0 ? (<IconButton onClick={handleEmptyList} size="sm" variant="plain" color="danger">
+          <DeleteForever />
+        </IconButton>
+        ): null}
+      </Stack>
       <Divider />
       <IngredientList
         ingredients={ingredients}

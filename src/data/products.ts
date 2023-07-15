@@ -820,6 +820,26 @@ const products: Product[] = [
       protein: 5
     }
   },
+  {
+    id: "92",
+    name: "Tomates broyées",
+    flavour: "Épicées",
+    brand: "Pastene",
+    macros: {
+      calories: 46,
+      protein: 2.2
+    }
+  },
+  {
+    id: "93",
+    name: "Pita",
+    flavour: "Blé entier",
+    brand: "Achtaroute",
+    macros: {
+      calories: 220,
+      protein: 8
+    }
+  },
 ]
 
 const recipes: Product[] = [
@@ -837,6 +857,14 @@ const recipes: Product[] = [
     macros: {
       calories: 123,
       protein: 20.9,
+    }
+  },
+  {
+    id: "r-3",
+    name: "🍽️ Tzatziki",
+    macros: {
+      calories: 52,
+      protein: 6.7,
     }
   }
 ]
