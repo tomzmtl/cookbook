@@ -9,6 +9,7 @@ export type Product = {
   extra?: string
   type?: string
   variety?: string
+  origin?: string,
   // Macros unit: g/100g
   macros: {
     calories: number,

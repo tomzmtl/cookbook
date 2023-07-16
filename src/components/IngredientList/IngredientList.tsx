@@ -39,7 +39,7 @@ const IngredientList = ({ ingredients, removeIngredient, editIngredient }: Props
     <List sx={{ maxWidth: "700px" }}>
       {renderSelectedIngredients()}
       <ListItem>
-        <Typography fontWeight={700}>
+        <Typography level="body2">
           {`Total: Calories: ${displayCalories(totals.calories)}, Protéines: ${displayProtein(totals.protein)}, Weight: ${totals.weight.toFixed(0)}g`}
         </Typography>
       </ListItem>

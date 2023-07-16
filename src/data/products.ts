@@ -838,6 +838,52 @@ const products: Product[] = [
     macros: {
       calories: 220,
       protein: 8
+    },
+  },
+  {
+    id: "94",
+    name: "Crevettes sauvages",
+    origin: "Argentine",
+    brand: "Marina Del Rey",
+    macros: {
+      calories: 80,
+      protein: 18
+    }
+  },
+  {
+    id: "95",
+    name: "Légumes congelés",
+    brand: "Arctic Gardens",
+    type: "Oriental",
+    macros: {
+      calories: 30,
+      protein: 1.1
+    }
+  },
+  {
+    id: "96",
+    name: "Ketchup",
+    brand: "Compliments",
+    extra: "Faible en sodium",
+    macros: {
+      calories: 295,
+      protein: 4.4
+    }
+  },
+  {
+    id: "97",
+    name: "Ananas",
+    macros: {
+      calories: 50,
+      protein: 0.5
+    }
+  },
+  {
+    id: "98",
+    name: "Pommes",
+    macros: {
+      calories: 52,
+      protein: 0.3
     }
   },
 ]
