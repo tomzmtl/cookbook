@@ -17,6 +17,22 @@ export type Product = {
   }
 }
 
+export type AwsProduct = {
+  id: string
+  name: string
+  calories: number, // /100g
+  protein: number, // g/100g
+  brand?: string
+  flavour?: string
+  size?: string
+  color?: string
+  format?: string
+  extra?: string
+  type?: string
+  variety?: string
+  origin?: string,
+}
+
 export type Ingredient = {
   product: Product,
   weight: number

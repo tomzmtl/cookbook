@@ -4,7 +4,7 @@ import IntakeReport from "../IntakeReport"
 import Inventory from "../Inventory"
 
 const App = () => {
-  inventoryApi.useGetAllQuery({})
+  inventoryApi.useGetAllQuery()
 
   return (
     <Routes>

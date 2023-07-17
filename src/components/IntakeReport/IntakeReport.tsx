@@ -8,7 +8,6 @@ import IngredientList from "../IngredientList"
 import IngredientEditModal from "../IngredientEditModal"
 import { replaceAtIndex } from "../../helpers/array"
 import { reportApi } from "../../features/report/api"
-import NavMenu from "../NavMenu"
 import AppHeader from "../AppHeader/AppHeader"
 
 const getOptionLabel = (product: Product): string => compact([
@@ -75,13 +74,16 @@ const IntakeReport = () => {
   return (
     <Sheet>
       <Stack justifyContent="space-between" direction="row">
-        <AppHeader title={`Suivi: ${report?.date ?? "..."}`} />
-        {ingredients.length > 0 ? (<IconButton onClick={handleEmptyList} size="sm" variant="plain" color="danger">
-          <DeleteForever />
-        </IconButton>
-        ): null}
+        <AppHeader
+          title={`Suivi: ${report?.date ?? "..."}`}
+          endElement={ingredients.length > 0
+            ? (<IconButton onClick={handleEmptyList} size="sm" variant="plain" color="danger">
+                <DeleteForever />
+              </IconButton>)
+            : null
+          }
+        />
       </Stack>
-      <Divider />
       <IngredientList
         ingredients={ingredients}
         removeIngredient={removeIngredient}
