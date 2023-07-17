@@ -1,11 +1,10 @@
 import { Sheet } from '@mui/joy'
-import NavMenu from "../NavMenu"
+import AppHeader from '../AppHeader'
 
 const Inventory = () => {
   return (
     <Sheet>
-      <NavMenu />
-      Inventory
+      <AppHeader title="Inventaire" />
     </Sheet>
   )
 }

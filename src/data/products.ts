@@ -886,6 +886,15 @@ const products: Product[] = [
       protein: 0.3
     }
   },
+  {
+    id: "99",
+    name: "Margarine",
+    brand: "Olivina",
+    macros: {
+      calories: 700,
+      protein: 0
+    }
+  },
 ]
 
 const recipes: Product[] = [

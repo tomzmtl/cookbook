@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, IconButton, Modal } from "@mui/joy"
+import { Button, ButtonGroup, IconButton, Modal, Sheet } from "@mui/joy"
 import { useNavigate } from "react-router-dom"
 import { FactCheck, Inventory, Menu as MenuIcon } from '@mui/icons-material'
 import { useRef, useState } from "react";
@@ -26,14 +26,16 @@ const NavMenu = () => {
         <MenuIcon />
       </IconButton>
       <Modal open={open} onClose={handleCloseMenu} sx={{ p: 4 }}>
-        <ButtonGroup orientation="vertical" sx={{ textAlign: "left" }}>
-          <Button startDecorator={<FactCheck />} onClick={navigateTo("/")}>
-            Suivi
-          </Button>
-          <Button startDecorator={<Inventory />} onClick={navigateTo("/inventory")}>
-            Inventaire
-          </Button>
-        </ButtonGroup>
+        <Sheet variant="soft">
+          <ButtonGroup orientation="vertical" sx={{ textAlign: "left" }}>
+            <Button startDecorator={<FactCheck />} onClick={navigateTo("/")}>
+              Suivi
+            </Button>
+            <Button startDecorator={<Inventory />} onClick={navigateTo("/inventory")}>
+              Inventaire
+            </Button>
+          </ButtonGroup>
+        </Sheet>
       </Modal>
     </>
   )
