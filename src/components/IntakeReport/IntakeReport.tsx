@@ -1,5 +1,5 @@
 import { compact } from "lodash-es"
-import { Autocomplete, Button, Divider, FormControl, FormLabel, IconButton, Input, Sheet, Stack, Typography } from '@mui/joy'
+import { Autocomplete, Button, Divider, FormControl, FormLabel, IconButton, Sheet, Stack } from '@mui/joy'
 import products from "../../data/products"
 import { Ingredient, Product } from '../../types'
 import { ChangeEvent, SyntheticEvent, useState } from 'react'
@@ -8,7 +8,8 @@ import IngredientList from "../IngredientList"
 import IngredientEditModal from "../IngredientEditModal"
 import { replaceAtIndex } from "../../helpers/array"
 import { reportApi } from "../../features/report/api"
-import AppHeader from "../AppHeader/AppHeader"
+import AppHeader from "../AppHeader"
+import NumberInput from "../NumberInput"
 
 const getOptionLabel = (product: Product): string => compact([
   product.name,
@@ -111,11 +112,10 @@ const IntakeReport = () => {
           </FormControl>
           <FormControl>
             <FormLabel>Poids</FormLabel>
-            <Input
+            <NumberInput
               value={selectedWeight}
               onChange={handleChangeWeight}
               placeholder="Poids (g)"
-              slotProps={{ input: { type: "number", inputMode: "decimal" } }}
             />
           </FormControl>
         </Stack>

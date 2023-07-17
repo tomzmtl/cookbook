@@ -895,6 +895,16 @@ const products: Product[] = [
       protein: 0
     }
   },
+  {
+    id: "100",
+    name: "Protéine",
+    brand: "LeanFit",
+    flavour: "Chocolat",
+    macros: {
+      calories: 394,
+      protein: 75.7
+    }
+  },
 ]
 
 const recipes: Product[] = [

@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, IconButton, Modal, Sheet } from "@mui/joy"
+import { Button, ButtonGroup, IconButton, Modal, ModalDialog, Sheet, Typography } from "@mui/joy"
 import { useNavigate } from "react-router-dom"
 import { FactCheck, Inventory, Menu as MenuIcon } from '@mui/icons-material'
 import { useRef, useState } from "react";
@@ -26,16 +26,16 @@ const NavMenu = () => {
         <MenuIcon />
       </IconButton>
       <Modal open={open} onClose={handleCloseMenu} sx={{ p: 4 }}>
-        <Sheet variant="soft">
+        <ModalDialog>
           <ButtonGroup orientation="vertical" sx={{ textAlign: "left" }}>
-            <Button startDecorator={<FactCheck />} onClick={navigateTo("/")}>
+            <Button startDecorator={<FactCheck />} onClick={navigateTo("/")} sx={{ justifyContent: "flex-start" }}>
               Suivi
             </Button>
-            <Button startDecorator={<Inventory />} onClick={navigateTo("/inventory")}>
+            <Button startDecorator={<Inventory />} onClick={navigateTo("/inventory")} sx={{ justifyContent: "flex-start" }}>
               Inventaire
             </Button>
           </ButtonGroup>
-        </Sheet>
+        </ModalDialog>
       </Modal>
     </>
   )
