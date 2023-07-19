@@ -1,4 +1,4 @@
-export type Product = {
+export type LegacyProduct = {
   id: string
   name: string
   brand?: string
@@ -17,7 +17,7 @@ export type Product = {
   }
 }
 
-export type AwsProduct = {
+export type Product = {
   id: string
   name: string
   calories: number, // /100g
@@ -30,7 +30,7 @@ export type AwsProduct = {
   extra?: string
   type?: string
   variety?: string
-  origin?: string,
+  origin?: string
 }
 
 export type Ingredient = {

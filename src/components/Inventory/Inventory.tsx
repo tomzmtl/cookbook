@@ -1,7 +1,7 @@
 import { Button, FormControl, FormLabel, Input, ListItem, ListItemContent, Modal, ModalDialog, Sheet, Stack, Typography } from '@mui/joy'
 import AppHeader from '../AppHeader'
 import { inventoryApi } from '../../features/inventory/api'
-import { AwsProduct } from '../../types'
+import { Product } from '../../types'
 import { Add } from '@mui/icons-material'
 import { useState } from 'react'
 import NumberInput from '../NumberInput'
@@ -18,7 +18,7 @@ const Inventory = () => {
     setModalOpen(false)
   }
 
-  const renderProduct = (product: AwsProduct) => {
+  const renderProduct = (product: Product) => {
     return (
       <ListItem sx={{ mb: 1 }} key={product.id}>
         <ListItemContent>

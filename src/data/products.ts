@@ -1,8 +1,8 @@
-import { Product } from "../types";
+import { LegacyProduct } from "../types";
 
-const sortByName = (a: Product, b: Product) => a.name.localeCompare(b.name)
+const sortByName = (a: LegacyProduct, b: LegacyProduct) => a.name.localeCompare(b.name)
 
-const products: Product[] = [
+const products: LegacyProduct[] = [
   {
     id: "1",
     name: "Xylitol",
@@ -11,40 +11,40 @@ const products: Product[] = [
       protein: 0
     }
   },
-  {
-    id: "2",
-    name: "Café",
-    macros: {
-      calories: 1,
-      protein: 0.1
-    }
-  },
-  {
-    id: "4",
-    name: "Champignons",
-    color: "Blanc",
-    macros: {
-      calories: 21,
-      protein: 3.1
-    }
-  },
-  {
-    id: "5",
-    name: "Courgettes",
-    macros: {
-      calories: 16,
-      protein: 1.2
-    }
-  },
-  {
-    id: "6",
-    name: "Oignons",
-    color: "Rouge/Blanc",
-    macros: {
-      calories: 40,
-      protein: 1.1
-    }
-  },
+  // {
+  //   id: "2",
+  //   name: "Café",
+  //   macros: {
+  //     calories: 1,
+  //     protein: 0.1
+  //   }
+  // },
+  // {
+  //   id: "4",
+  //   name: "Champignons",
+  //   color: "Blanc",
+  //   macros: {
+  //     calories: 21,
+  //     protein: 3.1
+  //   }
+  // },
+  // {
+  //   id: "5",
+  //   name: "Courgettes",
+  //   macros: {
+  //     calories: 16,
+  //     protein: 1.2
+  //   }
+  // },
+  // {
+  //   id: "6",
+  //   name: "Oignons",
+  //   color: "Rouge/Blanc",
+  //   macros: {
+  //     calories: 40,
+  //     protein: 1.1
+  //   }
+  // },
   {
     id: "7",
     name: "Thon",
@@ -140,14 +140,14 @@ const products: Product[] = [
       protein: 3.4
     }
   },
-  {
-    id: "17",
-    name: "Tomates cerise",
-    macros: {
-      calories: 18,
-      protein: 0.9
-    }
-  },
+  // {
+  //   id: "17",
+  //   name: "Tomates cerise",
+  //   macros: {
+  //     calories: 18,
+  //     protein: 0.9
+  //   }
+  // },
   {
     id: "18",
     name: "Laitue",
@@ -486,14 +486,14 @@ const products: Product[] = [
       protein: 78.1
     }
   },
-  {
-    id: "56",
-    name: "Carottes",
-    macros: {
-      calories: 41,
-      protein: 0.8
-    }
-  },
+  // {
+  //   id: "56",
+  //   name: "Carottes",
+  //   macros: {
+  //     calories: 41,
+  //     protein: 0.8
+  //   }
+  // },
   {
     id: "57",
     name: "Cheddar fort",
@@ -648,17 +648,17 @@ const products: Product[] = [
       protein: 0
     }
   },
-  {
-    id: "73",
-    name: "Olives",
-    brand: "Pastene",
-    color: "Noires",
-    format: "Entières",
-    macros: {
-      calories: 219,
-      protein: 1.2
-    }
-  },
+  // {
+  //   id: "73",
+  //   name: "Olives",
+  //   brand: "Pastene",
+  //   color: "Noires",
+  //   format: "Entières",
+  //   macros: {
+  //     calories: 219,
+  //     protein: 1.2
+  //   }
+  // },
   {
     id: "74",
     name: "Ail",
@@ -686,24 +686,24 @@ const products: Product[] = [
       protein: 7
     }
   },
-  {
-    id: "77",
-    name: "Sauce soya",
-    brand: "VH",
-    macros: {
-      calories: 30,
-      protein: 1.7
-    }
-  },
-  {
-    id: "78",
-    name: "Bacon de poulet",
-    brand: "Compliments",
-    macros: {
-      calories: 167,
-      protein: 14.2
-    }
-  },
+  // {
+  //   id: "77",
+  //   name: "Sauce soya",
+  //   brand: "VH",
+  //   macros: {
+  //     calories: 30,
+  //     protein: 1.7
+  //   }
+  // },
+  // {
+  //   id: "78",
+  //   name: "Bacon de poulet",
+  //   brand: "Compliments",
+  //   macros: {
+  //     calories: 167,
+  //     protein: 14.2
+  //   }
+  // },
   {
     id: "79",
     name: "Edamame congelées",
@@ -713,14 +713,14 @@ const products: Product[] = [
       protein: 17.6
     }
   },
-  {
-    id: "80",
-    name: "Saumon",
-    macros: {
-      calories: 182,
-      protein: 25.4
-    }
-  },
+  // {
+  //   id: "80",
+  //   name: "Saumon",
+  //   macros: {
+  //     calories: 182,
+  //     protein: 25.4
+  //   }
+  // },
   {
     id: "81",
     name: "Bleuets",
@@ -747,26 +747,26 @@ const products: Product[] = [
       protein: 16
     }
   },
-  {
-    id: "84",
-    name: "Singles",
-    brand: "Kraft",
-    extra: "Léger",
-    macros: {
-      calories: 237,
-      protein: 15.7
-    }
-  },
-  {
-    id: "85",
-    name: "Tomates en dés",
-    brand: "Aylmer",
-    extra: "Sans sel ajouté",
-    macros: {
-      calories: 19,
-      protein: 1.4
-    }
-  },
+  // {
+  //   id: "84",
+  //   name: "Singles",
+  //   brand: "Kraft",
+  //   extra: "Léger",
+  //   macros: {
+  //     calories: 237,
+  //     protein: 15.7
+  //   }
+  // },
+  // {
+  //   id: "85",
+  //   name: "Tomates en dés",
+  //   brand: "Aylmer",
+  //   extra: "Sans sel ajouté",
+  //   macros: {
+  //     calories: 19,
+  //     protein: 1.4
+  //   }
+  // },
   {
     id: "86",
     name: "Persil",
@@ -820,26 +820,26 @@ const products: Product[] = [
       protein: 5
     }
   },
-  {
-    id: "92",
-    name: "Tomates broyées",
-    flavour: "Épicées",
-    brand: "Pastene",
-    macros: {
-      calories: 46,
-      protein: 2.2
-    }
-  },
-  {
-    id: "93",
-    name: "Pita",
-    flavour: "Blé entier",
-    brand: "Achtaroute",
-    macros: {
-      calories: 220,
-      protein: 8
-    },
-  },
+  // {
+  //   id: "92",
+  //   name: "Tomates broyées",
+  //   flavour: "Épicées",
+  //   brand: "Pastene",
+  //   macros: {
+  //     calories: 46,
+  //     protein: 2.2
+  //   }
+  // },
+  // {
+  //   id: "93",
+  //   name: "Pita",
+  //   flavour: "Blé entier",
+  //   brand: "Achtaroute",
+  //   macros: {
+  //     calories: 220,
+  //     protein: 8
+  //   },
+  // },
   {
     id: "94",
     name: "Crevettes sauvages",
@@ -870,22 +870,22 @@ const products: Product[] = [
       protein: 4.4
     }
   },
-  {
-    id: "97",
-    name: "Ananas",
-    macros: {
-      calories: 50,
-      protein: 0.5
-    }
-  },
-  {
-    id: "98",
-    name: "Pommes",
-    macros: {
-      calories: 52,
-      protein: 0.3
-    }
-  },
+  // {
+  //   id: "97",
+  //   name: "Ananas",
+  //   macros: {
+  //     calories: 50,
+  //     protein: 0.5
+  //   }
+  // },
+  // {
+  //   id: "98",
+  //   name: "Pommes",
+  //   macros: {
+  //     calories: 52,
+  //     protein: 0.3
+  //   }
+  // },
   {
     id: "99",
     name: "Margarine",
@@ -905,9 +905,19 @@ const products: Product[] = [
       protein: 75.7
     }
   },
+  {
+    id: "100",
+    name: "Protéine",
+    brand: "LeanFit",
+    flavour: "Chocolat",
+    macros: {
+      calories: 394,
+      protein: 75.7
+    }
+  },
 ]
 
-const recipes: Product[] = [
+const recipes: LegacyProduct[] = [
   {
     id: "r-1",
     name: "🍽️ Saumon au four",

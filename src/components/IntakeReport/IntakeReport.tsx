@@ -1,7 +1,7 @@
 import { compact } from "lodash-es"
 import { Autocomplete, Button, Divider, FormControl, FormLabel, IconButton, Sheet, Stack } from '@mui/joy'
-import products from "../../data/products"
-import { Ingredient, Product } from '../../types'
+// import products from "../../data/products"
+import { Product, Ingredient } from '../../types'
 import { ChangeEvent, SyntheticEvent, useState } from 'react'
 import { Add, DeleteForever } from '@mui/icons-material'
 import IngredientList from "../IngredientList"
@@ -10,12 +10,13 @@ import { replaceAtIndex } from "../../helpers/array"
 import { reportApi } from "../../features/report/api"
 import AppHeader from "../AppHeader"
 import NumberInput from "../NumberInput"
+import { inventoryApi } from "../../features/inventory/api"
 
 const getOptionLabel = (product: Product): string => compact([
   product.name,
+  product.brand,
   product.variety,
   product.type,
-  product.brand,
   product.color,
   product.flavour,
   product.format,
@@ -29,6 +30,7 @@ const IntakeReport = () => {
   const [isEditing, setIsEditing] = useState<Ingredient|null>(null)
 
   const { data: report } = reportApi.useGetLatestQuery()
+  const { data: products } = inventoryApi.useGetAllQuery()
   
   const handleChangeProduct = (_e: SyntheticEvent, product: Product | null) => {
     if (product) {
@@ -102,7 +104,7 @@ const IntakeReport = () => {
             <FormLabel>Produit</FormLabel>
             <Autocomplete
               sx={{ width: "100%" }}
-              options={products.filter(product => !ingredients.find(ingredient => ingredient.product.id === product.id))}
+              options={products?.filter(product => !ingredients.find(ingredient => ingredient.product.id === product.id)) ?? []}
               getOptionLabel={getOptionLabel}
               onChange={handleChangeProduct}
               placeholder="Ajouter ingredient..."

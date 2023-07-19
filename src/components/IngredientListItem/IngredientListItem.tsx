@@ -11,8 +11,8 @@ type Props = {
 }
 
 const getMacros = (ingredient: Ingredient) => ({
-  calories: ((ingredient.product.macros.calories / 100) * ingredient.weight),
-  protein: ((ingredient.product.macros.protein / 100) * ingredient.weight),
+  calories: ((ingredient.product.calories / 100) * ingredient.weight),
+  protein: ((ingredient.product.protein / 100) * ingredient.weight),
 })
 
 const IngredientListItem = ({ ingredient, editIngredient, removeIngredient }: Props) => {

@@ -13,8 +13,8 @@ const calculateTotals = (ingredients: Ingredient[]) => {
   const totals = { calories: 0, protein: 0, weight: 0 }
 
   for (const ingredient of ingredients) {
-    totals.calories += (ingredient.product.macros.calories / 100) * ingredient.weight
-    totals.protein += (ingredient.product.macros.protein / 100) * ingredient.weight
+    totals.calories += (ingredient.product.calories / 100) * ingredient.weight
+    totals.protein += (ingredient.product.protein / 100) * ingredient.weight
     totals.weight += ingredient.weight
   }
 
