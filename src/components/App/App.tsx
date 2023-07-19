@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import { inventoryApi } from "../../features/inventory/api"
 import IntakeReport from "../IntakeReport"
+import IntakeReportOld from "../IntakeReportOld"
 import Inventory from "../Inventory"
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="inventory" element={<Inventory />} />
+      <Route path="report" element={<IntakeReportOld />} />
       <Route index element={<IntakeReport />} />
     </Routes>
   )

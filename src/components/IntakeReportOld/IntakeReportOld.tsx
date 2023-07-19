@@ -1,5 +1,6 @@
 import { compact } from "lodash-es"
-import { Autocomplete, Button, CircularProgress, Divider, FormControl, FormLabel, IconButton, Sheet, Stack } from '@mui/joy'
+import { Autocomplete, Button, Divider, FormControl, FormLabel, IconButton, Sheet, Stack } from '@mui/joy'
+import products from "../../data/products"
 import { Product, Ingredient } from '../../types'
 import { ChangeEvent, SyntheticEvent, useState } from 'react'
 import { Add, DeleteForever } from '@mui/icons-material'
@@ -9,14 +10,6 @@ import { replaceAtIndex } from "../../helpers/array"
 import { reportApi } from "../../features/report/api"
 import AppHeader from "../AppHeader"
 import NumberInput from "../NumberInput"
-import { inventoryApi } from "../../features/inventory/api"
-
-const UNKNOWN_PRODUCT: Product = {
-  id: "unknown",
-  name: "Unknown",
-  calories: 0,
-  protein: 0
-}
 
 const getOptionLabel = (product: Product): string => compact([
   product.name,
@@ -29,18 +22,13 @@ const getOptionLabel = (product: Product): string => compact([
   product.extra
 ]).join(", ")
 
-const IntakeReport = () => {
+const IntakeReportOld = () => {
   const [ingredients, setIngredients] = useState<Ingredient[]>([])
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
   const [selectedWeight, setSelectedWeight] = useState<string>("")
   const [isEditing, setIsEditing] = useState<Ingredient|null>(null)
 
   const { data: report } = reportApi.useGetLatestQuery()
-  const { data: products } = inventoryApi.useGetAllQuery()
-
-  if (!report || !products) {
-    return <CircularProgress />
-  }
   
   const handleChangeProduct = (_e: SyntheticEvent, product: Product | null) => {
     if (product) {
@@ -88,7 +76,7 @@ const IntakeReport = () => {
     <Sheet>
       <Stack justifyContent="space-between" direction="row">
         <AppHeader
-          title={`Suivi: ${report.date}`}
+          title={`[OLD] Suivi: ${report?.date ?? "..."}`}
           endElement={ingredients.length > 0
             ? (<IconButton onClick={handleEmptyList} size="sm" variant="plain" color="danger">
                 <DeleteForever />
@@ -98,7 +86,7 @@ const IntakeReport = () => {
         />
       </Stack>
       <IngredientList
-        ingredients={report.intake.map(item => ({ product: products?.find(({ id }) => item.productId === id) ?? UNKNOWN_PRODUCT, weight: item.weight }))}
+        ingredients={ingredients}
         removeIngredient={removeIngredient}
         editIngredient={editIngredient}
       />
@@ -150,4 +138,4 @@ const IntakeReport = () => {
   )
 }
 
-export default IntakeReport
+export default IntakeReportOld

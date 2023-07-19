@@ -10,11 +10,8 @@ export type LegacyProduct = {
   type?: string
   variety?: string
   origin?: string,
-  // Macros unit: g/100g
-  macros: {
-    calories: number,
-    protein: number
-  }
+  calories: number,
+  protein: number
 }
 
 export type Product = {
@@ -38,7 +35,12 @@ export type Ingredient = {
   weight: number
 }
 
+type IntakeItem = {
+  productId: Product["id"],
+  weight: Ingredient["weight"]
+}
+
 export type IntakeReport = {
   date: string,
-  intake: Ingredient[]
+  intake: IntakeItem[]
 }

@@ -34,6 +34,9 @@ const NavMenu = () => {
             <Button startDecorator={<Inventory />} onClick={navigateTo("/inventory")} sx={{ justifyContent: "flex-start" }}>
               Inventaire
             </Button>
+            <Button startDecorator={<FactCheck />} onClick={navigateTo("/report")} sx={{ justifyContent: "flex-start" }}>
+              Suivi (OLD)
+            </Button>
           </ButtonGroup>
         </ModalDialog>
       </Modal>
