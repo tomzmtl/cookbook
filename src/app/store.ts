@@ -1,18 +1,15 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { inventoryApi } from '../features/inventory/api'
-import { reportApi } from '../features/report/api'
-import { setupListeners } from '@reduxjs/toolkit/dist/query'
+import { configureStore } from "@reduxjs/toolkit"
+import { setupListeners } from "@reduxjs/toolkit/query"
 
 export const store = configureStore({
   reducer: {
-    [inventoryApi.reducerPath]: inventoryApi.reducer,
-    [reportApi.reducerPath]: reportApi.reducer,
+    // [inventoryApi.reducerPath]: inventoryApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(
-      inventoryApi.middleware,
-      reportApi.middleware
-    ),
+    getDefaultMiddleware()
+      .concat
+      // inventoryApi.middleware,
+      (),
 })
 
 setupListeners(store.dispatch)
