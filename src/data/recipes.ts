@@ -2,6 +2,7 @@ import { Recipe } from "../types"
 
 const recipes: Recipe[] = [
   {
+    id: "recipe-1",
     title: "Poitrine de dinde au four",
     ingredients: [
       {
@@ -32,7 +33,8 @@ const recipes: Recipe[] = [
     meatGuide: "Turkey",
   },
   {
-    title: "poulet Masal à la mijoteuse",
+    id: "recipe-2",
+    title: "Poulet Masal à la mijoteuse",
     ingredients: [
       {
         name: "cuisse de poulet",

@@ -1,24 +1,15 @@
-import { Box, List, ListItemButton, ListItemText } from "@mui/material"
-import recipes from "../../data/recipes"
-import { Recipe } from "../../types"
+import { useSelectedRecipe } from "../../features/recipe/hooks"
+import Recipe from "../Recipe"
+import RecipeList from "../RecipeList"
 
 const RecipesView = () => {
-  const renderRecipe = (recipe: Recipe) => {
-    return (
-      <ListItemButton key={recipe.title}>
-        <ListItemText
-          primary={recipe.title}
-          primaryTypographyProps={{ fontSize: 14, fontWeight: "medium" }}
-        />
-      </ListItemButton>
-    )
+  const recipe = useSelectedRecipe()
+
+  if (recipe) {
+    return <Recipe />
   }
 
-  return (
-    <Box>
-      <List>{recipes.map(renderRecipe)}</List>
-    </Box>
-  )
+  return <RecipeList />
 }
 
 export default RecipesView

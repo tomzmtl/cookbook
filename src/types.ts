@@ -11,6 +11,7 @@ export type RecipeIngredient = {
 }
 
 export type Recipe = {
+  id: string
   title: string
   ingredients: RecipeIngredient[]
   instructions: string[]

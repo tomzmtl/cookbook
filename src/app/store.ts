@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
+import { recipeSlice } from "../features/recipe/slice"
 
 export const store = configureStore({
   reducer: {
-    // [inventoryApi.reducerPath]: inventoryApi.reducer,
+    recipe: recipeSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()

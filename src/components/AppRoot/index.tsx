@@ -27,12 +27,12 @@ const AppRoot = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar />
-      <Container maxWidth="sm">
-        <Provider store={store}>
+      <Provider store={store}>
+        <AppBar />
+        <Container maxWidth="sm">
           <RouterProvider router={router} />
-        </Provider>
-      </Container>
+        </Container>
+      </Provider>
     </ThemeProvider>
   )
 }
